@@ -20,14 +20,14 @@ const SearchBar = (props) => {
 
     return (
         <div>
-            <form className="searchForm"
+            <form id="search-form"
                 onSubmit={(e) => {
                     e.preventDefault()
                     setSearchQuery(userInput)
                     setUserInput('')
                 }}
             >
-                <div className="ui form">
+                <div id="ui form">
                     <div className="field">
                         <label>Location Search: </label>
                         <input
