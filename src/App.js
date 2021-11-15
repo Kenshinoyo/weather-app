@@ -1,5 +1,5 @@
 import React from 'react';
-import { Switch, Route } from 'react-router';
+import { Route, Routes } from 'react-router';
 
 import SearchBar from './Components/SearchBar';
 import NavBar from './Components/NavBar';
@@ -11,7 +11,7 @@ import Daily from './Directory/Daily';
 import Weekly from './Directory/Weekly';
 
 
-import '../App.css';
+import './App.css';
 
 
 const App = () => {
@@ -21,8 +21,8 @@ const App = () => {
 
       <SearchBar />
       <NavBar />
-
-      <Switch>
+      
+      <Routes>
         <Route exact path="/">
           <Home />
         </Route>
@@ -39,7 +39,7 @@ const App = () => {
           <Weekly />
         </Route>
 
-      </Switch>
+      </Routes>
 
 
       <Footer />

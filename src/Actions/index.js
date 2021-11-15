@@ -5,7 +5,7 @@ export const GET_URL_FAIL = 'GET_URL_FAIL'
 
 
 // - "Universal" fetch call for components
-export const fetchWeather = (userInput) => dispatch => {
+const fetchWeather = (userInput) => dispatch => {
 
     dispatch({ type: GET_URL_START })
 
@@ -20,3 +20,5 @@ export const fetchWeather = (userInput) => dispatch => {
             type: GET_URL_FAIL
         }))
 }
+
+export default fetchWeather

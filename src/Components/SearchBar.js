@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { fetchWeather } from '../Actions';
+import fetchWeather from '../Actions';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
@@ -11,12 +11,19 @@ const SearchBar = (props) => {
 
     const [userInput, setUserInput] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
+    const [weatherData, setWeatherData] = useState([]);
 
-    useEffect((event) => {
-        if (event.key == "Enter") {
-            props.fetchWeather(searchQuery)}}, [searchQuery])
 
-    console.log(props.weatherURL)
+    //- Helper function
+    const submitHandler=(e) => {
+        props.fetchWeather(searchQuery)
+    }
+
+    // useEffect((e) => {
+    //     if (e.key === "Enter") {
+    //         props.fetchWeather(searchQuery)}}, [searchQuery])
+
+    console.log(weatherData)
 
     return (
         <div>
