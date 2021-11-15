@@ -3,6 +3,8 @@ export const GET_URL_START = 'GET_URL_START'
 export const GET_URL_SUCCESS = 'GET_URL_SUCCESS'
 export const GET_URL_FAIL = 'GET_URL_FAIL'
 
+
+// - "Universal" fetch call for components
 export const fetchWeather = (userInput) => dispatch => {
 
     dispatch({ type: GET_URL_START })

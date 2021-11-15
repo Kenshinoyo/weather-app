@@ -4,17 +4,17 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const mapStateToProps = (state) => {
-    return { weatherURL: state.weatherReducer.weatherURL }
+    return { weatherData: state.weatherReducer.weatherData }
 }
 
 const SearchBar = (props) => {
 
     const [userInput, setUserInput] = useState('');
-    const [city, setCity] = useState('');
+    const [searchQuery, setSearchQuery] = useState('');
 
     useEffect((event) => {
         if (event.key == "Enter") {
-            props.fetchWeather(city)}}, [city])
+            props.fetchWeather(searchQuery)}}, [searchQuery])
 
     console.log(props.weatherURL)
 
@@ -23,8 +23,8 @@ const SearchBar = (props) => {
             <form className="searchForm"
                 onSubmit={(e) => {
                     e.preventDefault()
-                    setCity(userInput)
-                    setUserInput("")
+                    setSearchQuery(userInput)
+                    setUserInput('')
                 }}
             >
                 <div className="ui form">
@@ -32,7 +32,7 @@ const SearchBar = (props) => {
                         <label>Location Search: </label>
                         <input
                             type="text"
-                            placeholder="Enter City..."
+                            placeholder="Please Enter City..."
                             onChange={e => setUserInput(e.target.value)}
                             value={userInput}
                         />
